@@ -15,7 +15,7 @@ public class User {
     private String name;
 
 
-    @OneToMany(mappedBy = "boss",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "boss",fetch = FetchType.LAZY)
     private List<User> users;
 
     @ManyToOne
@@ -50,6 +50,7 @@ public class User {
     }
 
     public void setBoss(User boss) {
+        boss.getUsers().add(this);
         this.boss = boss;
     }
 

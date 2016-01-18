@@ -16,18 +16,18 @@ public class App
 
         Transaction transaction =session.beginTransaction();
 
-        User user = (User) session.get(User.class, 1L);
-        //System.out.println(user);
-/*        for (int i = 0;i<1000;i++){
-            User user = new User();
-            user.setName("User"+i);
-            session.saveOrUpdate(user);
-        }*/
+        User user = (User) session.get(User.class, 2L);
+
+        User empl = (User) session.get(User.class, 8L);
+
+        empl.setBoss(user);
+
+       System.out.println(user);
         transaction.commit();
 
         HibernateUtil.close();
 
-        System.out.println(user);
+       System.out.println(user);
 
     }
 }
