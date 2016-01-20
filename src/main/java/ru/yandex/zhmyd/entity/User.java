@@ -1,6 +1,5 @@
 package ru.yandex.zhmyd.entity;
 
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.List;
@@ -58,8 +57,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", users=" + users +
-                '}';
+                ", name='" + name + "\'}";
     }
 }
